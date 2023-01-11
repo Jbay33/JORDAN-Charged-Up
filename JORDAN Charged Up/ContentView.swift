@@ -7,6 +7,26 @@
 
 import SwiftUI
 import SpriteKit
+
 struct ContentView: View {
-   
+    
+    let scene = FieldLayout()
+    
+    var body: some View {
+            NavigationView {
+                VStack{
+                    Text("PLez for chez")
+                    NavigationLink(destination: TeamView()) {
+                        Text("Autonomous")
+                    }
+                }
+            }
+            .navigationTitle("Autonomous")
+    }
+}
+
+struct ContentView_Previews: PreviewProvider {
+    static var previews: some View {
+        ContentView()
+    }
 }
