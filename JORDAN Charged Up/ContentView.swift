@@ -10,8 +10,6 @@ import SpriteKit
 
 struct ContentView: View {
     
-    let scene = FieldLayout()
-    
     var body: some View {
             NavigationView {
                 VStack{
