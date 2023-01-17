@@ -14,7 +14,7 @@ struct ContentView: View {
             NavigationView {
                 VStack{
                     Text("PLez for chez")
-                    NavigationLink(destination: TeamView()) {
+                    NavigationLink(destination: AutoView()) {
                         Text("Autonomous")
                     }
                 }

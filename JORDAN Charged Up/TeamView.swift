@@ -8,11 +8,22 @@
 import SwiftUI
 import SpriteKit
 
-struct TeamView: View {
+struct AutoView: View {
+    var scene: SKScene {
+        let scene = FieldLayout(fileNamed: "FieldLayout")!
+        scene.size = CGSize(width: 1334, height: 750)
+        scene.scaleMode = .aspectFill
+        scene.backgroundColor = .white
+        return scene
+    }
+    
     var body: some View {
         NavigationView {
             VStack {
-                SpriteView(scene: FieldLayout())
+                SpriteView(scene: scene)
+                    
+                    .foregroundColor(.white)
+                    .zIndex(-1)
             }
         }
     }
@@ -20,6 +31,7 @@ struct TeamView: View {
 
 struct TeamView_Previews: PreviewProvider {
     static var previews: some View {
-        TeamView()
+        AutoView()
+            .previewInterfaceOrientation(.landscapeLeft)
     }
 }

@@ -13,7 +13,7 @@
 		CAC5D5FF296C989E007EDE29 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CAC5D5FE296C989E007EDE29 /* Preview Assets.xcassets */; };
 		CAC5D606296C99ED007EDE29 /* TeamView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAC5D605296C99ED007EDE29 /* TeamView.swift */; };
 		CAC5D608296CA00A007EDE29 /* FieldLayout.sks in Resources */ = {isa = PBXBuildFile; fileRef = CAC5D607296CA00A007EDE29 /* FieldLayout.sks */; };
-		CAC5D60A296CA04F007EDE29 /* FieldFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAC5D609296CA04F007EDE29 /* FieldFile.swift */; };
+		CAC5D60A296CA04F007EDE29 /* FieldLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAC5D609296CA04F007EDE29 /* FieldLayout.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,7 +24,7 @@
 		CAC5D5FE296C989E007EDE29 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		CAC5D605296C99ED007EDE29 /* TeamView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamView.swift; sourceTree = "<group>"; };
 		CAC5D607296CA00A007EDE29 /* FieldLayout.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = FieldLayout.sks; sourceTree = "<group>"; };
-		CAC5D609296CA04F007EDE29 /* FieldFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FieldFile.swift; sourceTree = "<group>"; };
+		CAC5D609296CA04F007EDE29 /* FieldLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FieldLayout.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,7 +60,7 @@
 				CAC5D5F7296C989C007EDE29 /* JORDAN_Charged_UpApp.swift */,
 				CAC5D5F9296C989C007EDE29 /* ContentView.swift */,
 				CAC5D607296CA00A007EDE29 /* FieldLayout.sks */,
-				CAC5D609296CA04F007EDE29 /* FieldFile.swift */,
+				CAC5D609296CA04F007EDE29 /* FieldLayout.swift */,
 				CAC5D605296C99ED007EDE29 /* TeamView.swift */,
 				CAC5D5FB296C989E007EDE29 /* Assets.xcassets */,
 				CAC5D5FD296C989E007EDE29 /* Preview Content */,
@@ -149,7 +149,7 @@
 			files = (
 				CAC5D5FA296C989C007EDE29 /* ContentView.swift in Sources */,
 				CAC5D5F8296C989C007EDE29 /* JORDAN_Charged_UpApp.swift in Sources */,
-				CAC5D60A296CA04F007EDE29 /* FieldFile.swift in Sources */,
+				CAC5D60A296CA04F007EDE29 /* FieldLayout.swift in Sources */,
 				CAC5D606296C99ED007EDE29 /* TeamView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
