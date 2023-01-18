@@ -25,6 +25,10 @@ struct AutoView: View {
                     .foregroundColor(.white)
                     .zIndex(-1)
             }
+        }.toolbar{
+            NavigationLink(destination: MidGame()) {
+                Image(systemName: "arrow.right")
+            }
         }
     }
 }
