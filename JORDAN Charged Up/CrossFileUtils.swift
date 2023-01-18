@@ -74,6 +74,9 @@ class GameData {
     static func finalize() {
         let finString = Self.ToJSON()
         
+        GameDataArchive.updateList(newItem: finString)
+        
+        Self.clear()
     }
     
     static func clear() {
@@ -126,16 +129,19 @@ class GameData {
 
 class GameDataArchive {
     public static var gameList: [String] = [ ]
-    
-    static func loadList() {
+
+    //TODO: more userdefaults aaaAAAaaaAAA
+    static func clearArchive() {
         
+        gameList = [ ]
     }
     
+    //TODO: make it work with userdefaults AAAAaaaAAAAAAAaaaa
     static func updateList(newItem: String) {
         Self.gameList.append(newItem)
     }
     
-    //TODO: parse code i dont feel like doing right now aaaaaa
+    //TODO: parse json back into data i dont feel like doing right now aaaaaa
     static func loadItem(index: Int) {
         if index <= GameDataArchive.gameList.count {
             
