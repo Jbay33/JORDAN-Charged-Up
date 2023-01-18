@@ -19,6 +19,7 @@
 		CAC5D62529787706007EDE29 /* TeleFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAC5D62429787706007EDE29 /* TeleFile.swift */; };
 		CAC5D6272978770A007EDE29 /* Mommylo.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAC5D6262978770A007EDE29 /* Mommylo.swift */; };
 		CAC5D62929787731007EDE29 /* MidGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAC5D62829787731007EDE29 /* MidGame.swift */; };
+		CAC5D62C29787A6F007EDE29 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = CAC5D62B29787A6F007EDE29 /* Alamofire */; };
 		F8DF2693297722EF00DEEE33 /* CrossFileUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8DF2692297722EF00DEEE33 /* CrossFileUtils.swift */; };
 /* End PBXBuildFile section */
 
@@ -44,6 +45,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CAC5D62C29787A6F007EDE29 /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -110,6 +112,9 @@
 			dependencies = (
 			);
 			name = "JORDAN Charged Up";
+			packageProductDependencies = (
+				CAC5D62B29787A6F007EDE29 /* Alamofire */,
+			);
 			productName = "JORDAN Charged Up";
 			productReference = CAC5D5F4296C989C007EDE29 /* JORDAN Charged Up.app */;
 			productType = "com.apple.product-type.application";
@@ -138,6 +143,9 @@
 				Base,
 			);
 			mainGroup = CAC5D5EB296C989C007EDE29;
+			packageReferences = (
+				CAC5D62A29787A6F007EDE29 /* XCRemoteSwiftPackageReference "Alamofire" */,
+			);
 			productRefGroup = CAC5D5F5296C989C007EDE29 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -375,6 +383,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		CAC5D62A29787A6F007EDE29 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		CAC5D62B29787A6F007EDE29 /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CAC5D62A29787A6F007EDE29 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = CAC5D5EC296C989C007EDE29 /* Project object */;
 }
