@@ -21,7 +21,6 @@ struct AutoView: View {
         NavigationView {
             VStack {
                 SpriteView(scene: scene)
-                    
                     .foregroundColor(.white)
                     .zIndex(-1)
             }
