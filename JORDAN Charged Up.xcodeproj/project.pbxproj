@@ -15,8 +15,6 @@
 		CAC5D60A296CA04F007EDE29 /* FieldLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAC5D609296CA04F007EDE29 /* FieldLayout.swift */; };
 		CAC5D61B297876CF007EDE29 /* AutoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAC5D61A297876CF007EDE29 /* AutoView.swift */; };
 		CAC5D621297876F9007EDE29 /* TeleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAC5D620297876F9007EDE29 /* TeleView.swift */; };
-		CAC5D623297876FF007EDE29 /* TeleLayout.sks in Resources */ = {isa = PBXBuildFile; fileRef = CAC5D622297876FF007EDE29 /* TeleLayout.sks */; };
-		CAC5D62529787706007EDE29 /* TeleFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAC5D62429787706007EDE29 /* TeleFile.swift */; };
 		CAC5D6272978770A007EDE29 /* Mommylo.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAC5D6262978770A007EDE29 /* Mommylo.swift */; };
 		CAC5D62929787731007EDE29 /* MidGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAC5D62829787731007EDE29 /* MidGame.swift */; };
 		CAC5D62C29787A6F007EDE29 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = CAC5D62B29787A6F007EDE29 /* Alamofire */; };
@@ -33,8 +31,6 @@
 		CAC5D609296CA04F007EDE29 /* FieldLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FieldLayout.swift; sourceTree = "<group>"; };
 		CAC5D61A297876CF007EDE29 /* AutoView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AutoView.swift; sourceTree = "<group>"; };
 		CAC5D620297876F9007EDE29 /* TeleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeleView.swift; sourceTree = "<group>"; };
-		CAC5D622297876FF007EDE29 /* TeleLayout.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = TeleLayout.sks; sourceTree = "<group>"; };
-		CAC5D62429787706007EDE29 /* TeleFile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeleFile.swift; sourceTree = "<group>"; };
 		CAC5D6262978770A007EDE29 /* Mommylo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Mommylo.swift; sourceTree = "<group>"; };
 		CAC5D62829787731007EDE29 /* MidGame.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MidGame.swift; sourceTree = "<group>"; };
 		F8DF2692297722EF00DEEE33 /* CrossFileUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrossFileUtils.swift; sourceTree = "<group>"; };
@@ -77,9 +73,7 @@
 				CAC5D609296CA04F007EDE29 /* FieldLayout.swift */,
 				CAC5D61A297876CF007EDE29 /* AutoView.swift */,
 				CAC5D62829787731007EDE29 /* MidGame.swift */,
-				CAC5D622297876FF007EDE29 /* TeleLayout.sks */,
 				CAC5D620297876F9007EDE29 /* TeleView.swift */,
-				CAC5D62429787706007EDE29 /* TeleFile.swift */,
 				CAC5D6262978770A007EDE29 /* Mommylo.swift */,
 				F8DF2692297722EF00DEEE33 /* CrossFileUtils.swift */,
 				CAC5D5FB296C989E007EDE29 /* Assets.xcassets */,
@@ -163,7 +157,6 @@
 				CAC5D608296CA00A007EDE29 /* FieldLayout.sks in Resources */,
 				CAC5D5FF296C989E007EDE29 /* Preview Assets.xcassets in Resources */,
 				CAC5D5FC296C989E007EDE29 /* Assets.xcassets in Resources */,
-				CAC5D623297876FF007EDE29 /* TeleLayout.sks in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -178,7 +171,6 @@
 				CAC5D5FA296C989C007EDE29 /* ContentView.swift in Sources */,
 				CAC5D5F8296C989C007EDE29 /* JORDAN_Charged_UpApp.swift in Sources */,
 				CAC5D6272978770A007EDE29 /* Mommylo.swift in Sources */,
-				CAC5D62529787706007EDE29 /* TeleFile.swift in Sources */,
 				CAC5D61B297876CF007EDE29 /* AutoView.swift in Sources */,
 				CAC5D60A296CA04F007EDE29 /* FieldLayout.swift in Sources */,
 				CAC5D62929787731007EDE29 /* MidGame.swift in Sources */,

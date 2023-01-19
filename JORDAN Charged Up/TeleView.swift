@@ -9,9 +9,19 @@ import SwiftUI
 import _SpriteKit_SwiftUI
 
 struct TeleView: View {
+    var scene: SKScene {
+        let scene = FieldLayout(fileNamed: "FieldLayout")!
+        scene.size = CGSize(width: 1334, height: 750)
+        scene.scaleMode = .aspectFill
+        scene.backgroundColor = .white
+        return scene
+    }
+    
     var body: some View {
         NavigationView{
-        SpriteView(scene: TeleLayout())
+            SpriteView(scene: scene)
+                .foregroundColor(.white)
+                .zIndex(-1)
         }.toolbar {
             NavigationLink(destination: Mommylo()) {
                 Image(systemName: "arrow.right")
@@ -23,5 +33,6 @@ struct TeleView: View {
 struct TeleView_Previews: PreviewProvider {
     static var previews: some View {
         TeleView()
+            .previewInterfaceOrientation(.landscapeLeft)
     }
 }
