@@ -10,6 +10,9 @@ import SpriteKit
 import Alamofire
 
 struct ContentView: View {
+    
+    @available(iOS 16, *) typealias NavigationView = NavigationStack
+    
     @State var teamName = ""
     @State var chargeStationAuto = 0
     let specBlue = Color(red: 18, green:19, blue:31)

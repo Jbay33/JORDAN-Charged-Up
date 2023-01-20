@@ -9,16 +9,19 @@ import SwiftUI
 import _SpriteKit_SwiftUI
 
 struct TeleView: View {
-    @Environment(\.dismiss) var dismiss
+    @available(iOS 16, *) typealias NavigationView = NavigationStack
     
-    var scene: SKScene {
+    @Environment(\.dismiss) var dismiss
+    @Environment(\.colorScheme) var cScheme
+    
+    @State var scene: SKScene = {
         let scene = FieldLayout(fileNamed: "FieldLayout")!
         scene.size = CGSize(width: 1334, height: 750)
         scene.isAuto = false
         scene.scaleMode = .aspectFill
         scene.backgroundColor = .white
         return scene
-    }
+    }()
     
     var body: some View {
         NavigationView {
@@ -30,6 +33,8 @@ struct TeleView: View {
                 if Flow.waterfall {
                     dismiss()
                 }
+                
+                scene.backgroundColor = cScheme == .light ? .white : .black
             }
         }.toolbar {
             NavigationLink(destination: Mommylo()) {
@@ -50,5 +55,6 @@ struct TeleView_Previews: PreviewProvider {
     static var previews: some View {
         TeleView()
             .previewInterfaceOrientation(.landscapeLeft)
+            .preferredColorScheme(.dark)
     }
 }

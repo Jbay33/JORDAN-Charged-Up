@@ -9,7 +9,10 @@ import SwiftUI
 import SpriteKit
 
 struct AutoView: View {
+    @available(iOS 16, *) typealias NavigationView = NavigationStack
+    
     @Environment(\.dismiss) var dismiss
+    @Environment(\.colorScheme) var cScheme
 
     @State var scene: SKScene = {
         let scene = FieldLayout(fileNamed: "FieldLayout")!
@@ -30,6 +33,8 @@ struct AutoView: View {
                 if Flow.waterfall {
                     dismiss()
                 }
+                
+                scene.backgroundColor = cScheme == .light ? .white : .black
             }
         }.toolbar{
             NavigationLink(destination: MidGame()) {

@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct MidGame: View {
+    @available(iOS 16, *) typealias NavigationView = NavigationStack
+    
     @Environment(\.dismiss) var dismiss
     
     @State var chargeStationTele = 0

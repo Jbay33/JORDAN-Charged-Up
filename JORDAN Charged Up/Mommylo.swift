@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct Mommylo: View {
+    @available(iOS 16, *) typealias NavigationView = NavigationStack
+    
     @State private var showingAlert = false
     @Environment(\.dismiss) var dismiss
 
