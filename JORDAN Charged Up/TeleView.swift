@@ -12,6 +12,7 @@ struct TeleView: View {
     var scene: SKScene {
         let scene = FieldLayout(fileNamed: "FieldLayout")!
         scene.size = CGSize(width: 1334, height: 750)
+        scene.isAuto = false
         scene.scaleMode = .aspectFill
         scene.backgroundColor = .white
         return scene

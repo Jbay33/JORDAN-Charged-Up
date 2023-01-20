@@ -10,13 +10,14 @@ import SpriteKit
 
 struct AutoView: View {
 
-    var scene: SKScene {
+    @State var scene: SKScene = {
         let scene = FieldLayout(fileNamed: "FieldLayout")!
+        scene.isAuto = true
         scene.size = CGSize(width: 1334, height: 750)
         scene.scaleMode = .aspectFill
         scene.backgroundColor = .white
         return scene
-    }
+    }()
     
     var body: some View {
         NavigationView {
