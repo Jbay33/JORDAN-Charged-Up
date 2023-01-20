@@ -11,6 +11,8 @@
 1/18 - John and Justin worked through a lot of git related issues. Milo finalized changes to utility classes and types. 
 also milo, being the epicest gamer of them all, added functionality to all of the silly little fields that justin made.
 
+1/19 - Milo did this. why did he do it?
+
 ## THE PROJECT 
 ### THE PROJECT
 #### THE PROJECT
