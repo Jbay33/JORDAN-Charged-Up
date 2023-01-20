@@ -11,14 +11,12 @@ import Alamofire
 
 struct ContentView: View {
     
-    @available(iOS 16, *) typealias NavigationView = NavigationStack
-    
     @State var teamName = ""
     @State var chargeStationAuto = 0
     let specBlue = Color(red: 18, green:19, blue:31)
     
     var body: some View {
-        NavigationView {
+        NavigationStack {
             ZStack{
                 VStack{
                     HStack{
@@ -81,10 +79,11 @@ struct ContentView: View {
         GameData.endAutoStatus = ChargeStationStatus(rawValue:  chargeStationAuto)!
     }
     
-    struct ContentView_Previews: PreviewProvider {
-        static var previews: some View {
-            ContentView()
-                .previewInterfaceOrientation(.landscapeLeft)
-        }
+}
+
+struct ContentView_Previews: PreviewProvider {
+    static var previews: some View {
+        ContentView()
+            .previewInterfaceOrientation(.landscapeLeft)
     }
 }

@@ -9,7 +9,6 @@ import SwiftUI
 import _SpriteKit_SwiftUI
 
 struct TeleView: View {
-    @available(iOS 16, *) typealias NavigationView = NavigationStack
     
     @Environment(\.dismiss) var dismiss
     @Environment(\.colorScheme) var cScheme
@@ -24,7 +23,7 @@ struct TeleView: View {
     }()
     
     var body: some View {
-        NavigationView {
+        NavigationStack {
             VStack {
                 SpriteView(scene: scene)
                     .foregroundColor(.white)

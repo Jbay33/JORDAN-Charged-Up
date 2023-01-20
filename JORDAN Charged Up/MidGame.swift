@@ -8,7 +8,6 @@
 import SwiftUI
 
 struct MidGame: View {
-    @available(iOS 16, *) typealias NavigationView = NavigationStack
     
     @Environment(\.dismiss) var dismiss
     
@@ -18,7 +17,7 @@ struct MidGame: View {
     @State var defense = false
     
     var body: some View {
-        NavigationView {
+        NavigationStack {
             VStack {
                 HStack {
                     Spacer()
