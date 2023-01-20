@@ -57,6 +57,12 @@ struct ContentView: View {
                         Text("Start - Autonomous")
                     }.buttonStyle(.borderedProminent).padding()
                 }
+            }.onAppear {
+                if Flow.waterfall {
+                    Flow.waterfall = false
+                    teamName = ""
+                    chargeStationAuto = 0
+                }
             }
         }
     }

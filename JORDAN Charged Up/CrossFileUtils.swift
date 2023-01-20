@@ -99,6 +99,10 @@ extension ChargeStationStatus {
     }
 }
 
+class Flow {
+    public static var waterfall = false
+}
+
 class GameData {
     public static var teamId: UInt = 0
     

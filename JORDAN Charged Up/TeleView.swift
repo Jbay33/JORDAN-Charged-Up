@@ -9,6 +9,8 @@ import SwiftUI
 import _SpriteKit_SwiftUI
 
 struct TeleView: View {
+    @Environment(\.dismiss) var dismiss
+    
     var scene: SKScene {
         let scene = FieldLayout(fileNamed: "FieldLayout")!
         scene.size = CGSize(width: 1334, height: 750)
@@ -24,6 +26,10 @@ struct TeleView: View {
                 SpriteView(scene: scene)
                     .foregroundColor(.white)
                     .zIndex(-1)
+            }.onAppear {
+                if Flow.waterfall {
+                    dismiss()
+                }
             }
         }.toolbar {
             NavigationLink(destination: Mommylo()) {

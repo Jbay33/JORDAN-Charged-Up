@@ -9,6 +9,7 @@ import SwiftUI
 import SpriteKit
 
 struct AutoView: View {
+    @Environment(\.dismiss) var dismiss
 
     @State var scene: SKScene = {
         let scene = FieldLayout(fileNamed: "FieldLayout")!
@@ -25,6 +26,10 @@ struct AutoView: View {
                 SpriteView(scene: scene)
                     .foregroundColor(.white)
                     .zIndex(-1)
+            }.onAppear {
+                if Flow.waterfall {
+                    dismiss()
+                }
             }
         }.toolbar{
             NavigationLink(destination: MidGame()) {

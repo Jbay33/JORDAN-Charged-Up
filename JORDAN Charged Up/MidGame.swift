@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct MidGame: View {
+    @Environment(\.dismiss) var dismiss
+    
     @State var chargeStationTele = 0
     @State var groundPick = 0
     @State var gamePiece = 0
@@ -90,11 +92,24 @@ struct MidGame: View {
                     Spacer()
                 }
                 
-//                breaks everything for some silly reason:
+//                breaks everything for some silly reason:    
 //
 //                NavigationLink(destination: TeleView()) {
 //                    Text("Teleop")
 //                }.buttonStyle(.borderedProminent).padding()
+            }.onAppear {
+                if Flow.waterfall {
+                    chargeStationTele = 0
+                    groundPick = 0
+                    gamePiece = 0
+                    defense = false
+                    dismiss()
+                } else {
+                    chargeStationTele = GameData.endgameStatus.rawValue
+                    groundPick = GameData.feedLocation.rawValue
+                    gamePiece = GameData.feeder.rawValue
+                    defense = GameData.playingDefense
+                }
             }
         } .toolbar {
             NavigationLink(destination: TeleView()) {

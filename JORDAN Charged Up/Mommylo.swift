@@ -9,6 +9,7 @@ import SwiftUI
 
 struct Mommylo: View {
     @State private var showingAlert = false
+    @Environment(\.dismiss) var dismiss
 
     var body: some View {
         VStack{
@@ -19,6 +20,12 @@ struct Mommylo: View {
             }.alert("Are you sure?", isPresented: $showingAlert) {
                 Button("Yes") {
                     //John  Submit
+                    
+                    //TODO: replace .clear()
+                    GameData.clear()
+                    
+                    Flow.waterfall = true
+                    dismiss()
                 }
                 Button("No", role: .cancel) { }
             }
