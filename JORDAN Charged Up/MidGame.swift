@@ -17,34 +17,67 @@ struct MidGame: View {
         NavigationView {
             VStack {
                 HStack {
+                    Spacer()
+                    
                     VStack {
                         Text("Charge Station")
+                            .padding(Edge.Set.top, 50.0)
+                        
+                        Spacer()
+                        
                         Picker("Charge Station", selection: $chargeStationTele) {
                             Text("Not on").tag(0)
                             Text("In community").tag(1)
                             Text("On but not Balanced").tag(2)
                             Text("On and Balanced").tag(3)
-                        }
+                        }.padding(Edge.Set.bottom, 125.0)
                     }.padding()
+                    
+                    Spacer()
+                    
                     VStack{
                         Text("Where can it feed from?")
+                            .padding(Edge.Set.top, 50.0)
+                        
+                        Spacer()
+                        
                         Picker("Where can it feed", selection: $groundPick) {
                             Text("Nowhere").tag(-1)
                             Text("Ground").tag(0)
                             Text("Feeder").tag(1)
                             Text("Both").tag(2)
-                        }
+                        }.padding(Edge.Set.bottom, 125.0)
                     }.padding()
+                    
+                    Spacer()
+                    
                     VStack{
                         Text("What can it pick up?")
+                            .padding(Edge.Set.top, 50.0)
+                        
+                        Spacer()
+                        
                         Picker("What it pick", selection: $gamePiece) {
                             Text("Nothing").tag(-1)
                             Text("Cone").tag(0)
                             Text("Square").tag(1)
                             Text("Both").tag(2)
-                        }
+                        }.padding(Edge.Set.bottom, 125.0)
                     }.padding()
-                    Toggle("Defense", isOn: $defense)
+                    
+                    Spacer()
+                    
+                    VStack {
+                        Text("Playing Defense?")
+                            .padding(Edge.Set.top, 50.0)
+                        
+                        Spacer()
+                        
+                        Toggle("", isOn: $defense).frame(width: 50.0)
+                            .padding(Edge.Set.bottom, 125.0)
+                    }.padding()
+                    
+                    Spacer()
                 }
 //                NavigationLink(destination: TeleView()) {
 //                    Text("Teleop")

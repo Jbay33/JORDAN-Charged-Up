@@ -17,7 +17,7 @@ struct ContentView: View {
         NavigationView {
             ZStack{
                 VStack{
-                    Text("Begining of Match")
+                    Text("Beginning of Match")
                         .padding()
 
                     TextField("Team: ", text: $teamName)
