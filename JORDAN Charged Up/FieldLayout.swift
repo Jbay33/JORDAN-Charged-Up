@@ -8,6 +8,7 @@
 
 import Foundation
 import SpriteKit
+import Alamofire
 
 class FieldLayout : SKScene{
     var pieces = [
@@ -58,6 +59,7 @@ class FieldLayout : SKScene{
     var sectC = SKNode()
 
     override func didMove(to view: SKView) {
+        
         sectA = childNode(withName: "Peices")!.childNode(withName: "SectA")!
         sectB = childNode(withName: "Peices")!.childNode(withName: "SectB")!
         sectC = childNode(withName: "Peices")!.childNode(withName: "SectC")!
@@ -99,28 +101,30 @@ class FieldLayout : SKScene{
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         let location = touches.first!.location(in: self)
         
+        print(location)
+        
         for i in pieces {
             if i.count > 1 {
                 if !i[0].isHidden && i[0].frame.contains(location)  {
                     i[0].isHidden = true
                     i[1].isHidden = false
-                    break
+                    //break
                 } else if !i[1].isHidden && i[0].frame.contains(location) {
                     i[1].isHidden = true
                     i[0].isHidden = true
-                    break
+                    //break
                 } else if i[0].frame.contains(location) {
                     i[0].isHidden = false
                     i[1].isHidden = true
-                    break
+                    //break
                 }
             } else {
                 if !i[0].isHidden && i[0].frame.contains(location) {
                     i[0].isHidden = true
-                    break
+                    //break
                 } else if i[0].frame.contains(location) {
                     i[0].isHidden = false
-                    break
+                    //break
                 }
             }
         }
