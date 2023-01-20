@@ -30,7 +30,9 @@ struct MidGame: View {
                             Text("In community").tag(1)
                             Text("On but not Balanced").tag(2)
                             Text("On and Balanced").tag(3)
-                        }.padding(Edge.Set.bottom, 125.0)
+                        }.padding(Edge.Set.bottom, 125.0).onChange(of: chargeStationTele) { num in
+                            GameData.endgameStatus = ChargeStationStatus(rawValue: chargeStationTele)!
+                        }
                     }.padding()
                     
                     Spacer()
@@ -46,7 +48,9 @@ struct MidGame: View {
                             Text("Ground").tag(0)
                             Text("Feeder").tag(1)
                             Text("Both").tag(2)
-                        }.padding(Edge.Set.bottom, 125.0)
+                        }.padding(Edge.Set.bottom, 125.0).onChange(of: groundPick) { num in
+                            GameData.feedLocation = FeedLocation(rawValue: groundPick)!
+                        }
                     }.padding()
                     
                     Spacer()
@@ -63,6 +67,9 @@ struct MidGame: View {
                             Text("Square").tag(1)
                             Text("Both").tag(2)
                         }.padding(Edge.Set.bottom, 125.0)
+                            .onChange(of: gamePiece) { num in
+                                GameData.feeder = FeederType(rawValue: gamePiece)!
+                            }
                     }.padding()
                     
                     Spacer()
@@ -75,10 +82,16 @@ struct MidGame: View {
                         
                         Toggle("", isOn: $defense).frame(width: 50.0)
                             .padding(Edge.Set.bottom, 125.0)
+                            .onChange(of: defense) { val in
+                                GameData.playingDefense = defense
+                            }
                     }.padding()
                     
                     Spacer()
                 }
+                
+//                breaks everything for some silly reason:
+//
 //                NavigationLink(destination: TeleView()) {
 //                    Text("Teleop")
 //                }.buttonStyle(.borderedProminent).padding()

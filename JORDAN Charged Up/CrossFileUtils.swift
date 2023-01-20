@@ -26,6 +26,57 @@ extension GamePeice {
     }
 }
 
+enum FeederType: Int {
+    case None = -1
+    case Cone = 0
+    case Cube = 1
+    case Both = 2
+}
+
+extension FeederType {
+    func JSONValue() -> String {
+        switch self {
+        case .None:
+            return "None"
+            
+        case .Cone:
+            return "Cone"
+            
+        case .Cube:
+            return "Cube"
+            
+        case .Both:
+            return "Both"
+        }
+    }
+}
+
+enum FeedLocation: Int {
+    case Nowhere = -1
+    case Floor   = 0
+    case Portal  = 1
+    case Both    = 2
+}
+
+extension FeedLocation {
+    func JSONValue() -> String {
+        switch self {
+        case .Nowhere:
+             return "Nowhere"
+            
+        case .Floor:
+            return "Floor"
+        
+        case .Portal:
+            return "Portal"
+            
+        case .Both:
+            return "Both"
+        
+        }
+    }
+}
+
 enum ChargeStationStatus: Int {
     case None
     case InCommunity
@@ -54,6 +105,10 @@ class GameData {
     public static var playingDefense: Bool = false
     
     public static var notes: String = ""
+    
+    public static var feeder: FeederType = .Cone
+    
+    public static var feedLocation: FeedLocation = .Floor
     
     public static var endgameStatus: ChargeStationStatus = .None
     
@@ -120,7 +175,9 @@ class GameData {
             return finalString
         }())],
             "endgameStatus": "\(GameData.endgameStatus.JSONValue())",
-            "endAutoStatus": "\(GameData.endAutoStatus.JSONValue())"
+            "endAutoStatus": "\(GameData.endAutoStatus.JSONValue())",
+            "feedLocation": "\(Self.feedLocation.JSONValue())",
+            "feederType": "\(Self.feeder.JSONValue())"
         }
         """
     }
