@@ -155,6 +155,8 @@ class GameData {
             .Empty, .Empty, .Empty,
             .Empty, .Empty, .Empty
         ]
+        Self.feeder = .Cone
+        Self.feedLocation = .Floor
     }
     
     //kinda disgusting but oh well
@@ -168,11 +170,11 @@ class GameData {
         [\({
             var finalString = ""
             
-            for i in GameData.gamePeices {
-                if i.JSONValue() != GameData.gamePeices.last!.JSONValue() {
-                    finalString += "\"\(i.JSONValue()), \""
+            for i in 0..<GameData.gamePeices.count {
+                if i + 1 == GameData.gamePeices.count {
+                    finalString += "\"\(GameData.gamePeices[i].JSONValue())\" "
                 } else {
-                    finalString += "\"\(i.JSONValue()) \""
+                    finalString += "\"\(GameData.gamePeices[i].JSONValue())\", "
                 }
             }
         
@@ -181,7 +183,8 @@ class GameData {
             "endgameStatus": "\(GameData.endgameStatus.JSONValue())",
             "endAutoStatus": "\(GameData.endAutoStatus.JSONValue())",
             "feedLocation": "\(Self.feedLocation.JSONValue())",
-            "feederType": "\(Self.feeder.JSONValue())"
+            "feederType": "\(Self.feeder.JSONValue())",
+            "fileVersion": 1
         }
         """
     }
@@ -204,9 +207,7 @@ class GameDataArchive {
     
     //TODO: parse json back into data i dont feel like doing right now aaaaaa
     static func loadItem(index: Int) {
-        if index <= GameDataArchive.gameList.count {
-            
-        }
+        //first cast: [String; Any], second cast: [String; [String]] (for game piece list)
     }
     
     //TODO: upload code and i find http library aaaaaa

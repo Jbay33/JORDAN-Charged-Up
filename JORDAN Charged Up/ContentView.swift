@@ -52,7 +52,6 @@ struct ContentView: View {
                         Spacer()
                     }.padding()
                     
-                    
                     NavigationLink(destination: AutoView()) {
                         Text("Start - Autonomous")
                     }.buttonStyle(.borderedProminent).padding()

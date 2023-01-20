@@ -21,8 +21,10 @@ struct Mommylo: View {
                 Button("Yes") {
                     //John  Submit
                     
-                    //TODO: replace .clear()
+                    //TODO: replace .clear() & .toJSON()
+                    print(GameData.ToJSON())
                     GameData.clear()
+                    
                     
                     Flow.waterfall = true
                     dismiss()
