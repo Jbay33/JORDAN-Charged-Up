@@ -18,13 +18,22 @@ struct TeleView: View {
     }
     
     var body: some View {
-        NavigationView{
-            SpriteView(scene: scene)
-                .foregroundColor(.white)
-                .zIndex(-1)
+        NavigationView {
+            VStack {
+                SpriteView(scene: scene)
+                    .foregroundColor(.white)
+                    .zIndex(-1)
+            }
         }.toolbar {
             NavigationLink(destination: Mommylo()) {
-                Image(systemName: "arrow.right")
+                HStack {
+                    Text("Finalize")
+                    if #available(iOS 16.0, *) {
+                        Image(systemName: "chevron.right").fontWeight(.semibold)
+                    } else {
+                        Image(systemName: "chevron.right")
+                    }
+                }
             }
         }
     }

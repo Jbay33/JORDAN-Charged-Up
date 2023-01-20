@@ -26,13 +26,14 @@ struct ContentView: View {
                         .frame(width: 100)
                     Text("Charge Station")
                     Picker("Charge Station", selection: $chargeStationAuto) {
-                        Text("Not On").tag(0)
-                        Text("On but not Balanced").tag(1)
-                        Text("On and Balanced").tag(2)
+                        Text("Not on").tag(0)
+                        Text("In community").tag(1)
+                        Text("On but not Balanced").tag(2)
+                        Text("On and Balanced").tag(3)
                     }
                     NavigationLink(destination: AutoView()) {
-                        Text("Autonomous")
-                    }
+                        Text("Start - Autonomous")
+                    }.buttonStyle(.borderedProminent).padding()
                 }
             }
         }
@@ -40,6 +41,7 @@ struct ContentView: View {
     struct ContentView_Previews: PreviewProvider {
         static var previews: some View {
             ContentView()
+                .previewInterfaceOrientation(.landscapeLeft)
         }
     }
 }

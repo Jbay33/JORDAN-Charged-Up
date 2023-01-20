@@ -27,7 +27,14 @@ struct AutoView: View {
             }
         }.toolbar{
             NavigationLink(destination: MidGame()) {
-                Image(systemName: "arrow.right")
+                HStack {
+                    Text("Mid Game")
+                    if #available(iOS 16.0, *) {
+                        Image(systemName: "chevron.right").fontWeight(.semibold)
+                    } else {
+                        Image(systemName: "chevron.right")
+                    }
+                }
             }
         }
     }
