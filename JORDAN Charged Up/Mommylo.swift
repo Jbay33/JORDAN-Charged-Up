@@ -18,8 +18,20 @@ struct Mommylo: View {
             VStack{
                 Text("End of Game")
                     .padding()
-                Button("Submit Data") {
-                    showingAlert = true
+                HStack {
+                    Button("Submit Data") {
+                        showingAlert = true
+                    }.padding().buttonStyle(.bordered)
+                    
+                    Button("Save for Later") {
+                        //TODO: replace .finalize() & .toJSON()
+                        print(GameData.ToJSON())
+                        GameData.finalize()
+                        
+                        
+                        Flow.waterfall = true
+                        dismiss()
+                    }.padding().buttonStyle(.borderedProminent)
                 }
             }.alert("Are you sure?", isPresented: $showingAlert) {
                 Button("Yes") {
@@ -33,6 +45,7 @@ struct Mommylo: View {
                     Flow.waterfall = true
                     dismiss()
                 }
+                
                 Button("No", role: .cancel) { }
             }
         }

@@ -190,19 +190,92 @@ class GameData {
     }
 }
 
+class MatchCompressed: Hashable, Identifiable {
+    static func == (lhs: MatchCompressed, rhs: MatchCompressed) -> Bool {
+        return lhs.a == rhs.a && lhs.b == rhs.b
+    }
+    
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(a)
+        hasher.combine(b)
+    }
+    
+    let id = UUID()
+    
+    var a: Int
+    var b: Int
+    
+    init(val: (Int, Int) ) {
+        a = val.0
+        b = val.1
+    }
+}
+
+class Jank: Codable {
+    public var teamId: Int
+    public var defensive: Bool
+    public var notes: String
+    public var gamePeices: [String]
+    public var endgameStatus: String
+    public var endAutoStatus: String
+    public var feedLocation: String
+    public var feederType: String
+    public var fileVersion: Int
+}
 
 class GameDataArchive {
     public static var gameList: [String] = [ ]
-
-    //TODO: more userdefaults aaaAAAaaaAAA
+    
     static func clearArchive() {
-        
         gameList = [ ]
+        deleteUserDefaults()
     }
     
-    //TODO: make it work with userdefaults AAAAaaaAAAAAAAaaaa
+    static func getListOfMatches() -> [MatchCompressed] {
+        var list: [MatchCompressed] = [ ]
+        
+        for i in 0..<Self.gameList.count {
+            do {
+                let decoder = JSONDecoder()
+                
+                let dat = try decoder.decode(Jank.self, from: Data(Self.gameList[i].utf8))
+                
+                list += [ MatchCompressed( val: ( i, dat.teamId ) ) ]
+                
+            } catch {
+                print(error)
+                return [ MatchCompressed(val: (-1, -1) ) ]
+            }
+        }
+        
+        return list.isEmpty ? [ MatchCompressed(val: (-2, -2) )] : list
+    }
+    
+    static func deleteUserDefaults() {
+        let uds = UserDefaults.standard
+        uds.removeObject(forKey: "JordanSave")
+    }
+    
+    static func updateUserDefaults() {
+        let uds = UserDefaults.standard
+        let dat = Self.gameList
+        
+        uds.set(dat, forKey: "JordanSave")
+    }
+    
+    static func loadUserDefaults() {
+        let uds = UserDefaults.standard
+        
+        if let dat = uds.stringArray(forKey: "JordanSave") {
+            Self.gameList = dat
+        } else {
+            Self.gameList = [ ]
+        }
+    }
+    
     static func updateList(newItem: String) {
         Self.gameList.append(newItem)
+        updateUserDefaults()
     }
     
     //TODO: parse json back into data i dont feel like doing right now aaaaaa
