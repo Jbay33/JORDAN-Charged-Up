@@ -24,7 +24,7 @@ struct SavedView: View {
                             Text("No data")
                         } else {
                             HStack {
-                                Text("(\(GameDataArchive.gameList.count - i.a)) Team: \(i.b)")
+                                Text(verbatim: "(\(GameDataArchive.gameList.count - i.a)) Team: \(i.b)")
                             }
                         }
                     }

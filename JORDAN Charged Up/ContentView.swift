@@ -19,9 +19,6 @@ struct ContentView: View {
         NavigationStack {
             ZStack{
                 VStack {
-                    Spacer()
-                    Spacer()
-                    Spacer()
                     
                     HStack{
                         
@@ -36,8 +33,9 @@ struct ContentView: View {
                             Spacer()
 
                             TextField("Team #", text: $teamName)
-                                .keyboardType(.numberPad)
+                                .keyboardType(.numbersAndPunctuation)
                                 .textFieldStyle(.roundedBorder)
+                                .scrollDismissesKeyboard(ScrollDismissesKeyboardMode.interactively)
                                 .frame(width: 100)
                                 .onSubmit {
                                     handleNumber()
@@ -74,10 +72,6 @@ struct ContentView: View {
                         Text("Start - Autonomous")
                     }.buttonStyle(.borderedProminent)
                         .padding()
-                    
-                    Spacer()
-                    Spacer()
-                    Spacer()
                 }
             }.onAppear {
                 if Flow.waterfall {
