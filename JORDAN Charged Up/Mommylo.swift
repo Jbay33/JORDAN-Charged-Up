@@ -12,10 +12,17 @@ struct Mommylo: View {
     
     @State private var showingAlert = false
     @Environment(\.dismiss) var dismiss
-
+    @State var notesForMatch = ""
+    @State var disabled = false
     var body: some View {
         NavigationStack {
             VStack{
+                HStack{
+                    TextField("Notes on Match", text: $notesForMatch)
+                        .frame(width: 400)
+                    Toggle("Robot Disabled", isOn: $disabled)
+                        .frame(width: 200)
+                }
                 Text("End of Game")
                     .padding()
                 HStack {

@@ -13,11 +13,13 @@ struct ContentView: View {
     @State var teamName = ""
     @State var chargeStationAuto = 0
     @State var savedIcon = "tray.fill"
-    let specBlue = Color(red: 18, green:19, blue:31)
-    
+    let specBlue = CGColor.init(red: 18, green:19, blue:31, alpha:1)
     var body: some View {
+        
         NavigationStack {
+            
             ZStack{
+                Color.init(specBlue).ignoresSafeArea(.all)
                 VStack {
                     
                     HStack{
@@ -75,7 +77,8 @@ struct ContentView: View {
                     }.buttonStyle(.borderedProminent)
                         .padding()
                 }
-            }.onAppear {
+            }
+            .onAppear {
                 if Flow.waterfall {
                     Flow.waterfall = false
                     teamName = ""
@@ -103,7 +106,8 @@ struct ContentView: View {
                     }
                 }
             }
-        }.onAppear {
+        }
+        .onAppear {
             GameDataArchive.loadUserDefaults()
         }
     }
