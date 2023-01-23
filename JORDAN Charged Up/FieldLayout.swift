@@ -238,50 +238,48 @@ class FieldLayout : SKScene {
     }
     
     override func update(_ currentTime: TimeInterval) {
-        if isAuto {
-            for i in 0..<pieces.count {
-                switch GameData.gamePeices[i] {
-                    case .Empty:
-                        pieces[i][0].isHidden = true
-                        pieces[i][0].alpha = 1.0
+        for i in 0..<pieces.count {
+            switch GameData.gamePeices[i] {
+                case .Empty:
+                    pieces[i][0].isHidden = true
+                    pieces[i][0].alpha = 1.0
+                    
+                    if pieces[i].count > 1 {
+                        pieces[i][1].isHidden = true
+                        pieces[i][1].alpha = 1.0
+                    }
+                    break
+                    
+                case .Cone(let a):
+                    if a != isAuto {
+                        pieces[i][0].isHidden = false
+                        pieces[i][0].alpha = 0.5
                         
                         if pieces[i].count > 1 {
                             pieces[i][1].isHidden = true
                             pieces[i][1].alpha = 1.0
                         }
                         break
-                        
-                    case .Cone(let a):
-                        if a != isAuto {
-                            pieces[i][0].isHidden = false
-                            pieces[i][0].alpha = 0.5
-                            
-                            if pieces[i].count > 1 {
-                                pieces[i][1].isHidden = true
-                                pieces[i][1].alpha = 1.0
-                            }
-                            break
-                        } else {
-                            pieces[i][0].isHidden = false
+                    } else {
+                        pieces[i][0].isHidden = false
+                        pieces[i][0].alpha = 1.0
+                        break
+                    }
+                    
+                case .Cube(let a):
+                    if a != isAuto {
+                        pieces[i][1].isHidden = false
+                        pieces[i][1].alpha = 0.5
+                        if pieces[i].count > 1 {
+                            pieces[i][0].isHidden = true
                             pieces[i][0].alpha = 1.0
-                            break
                         }
-                        
-                    case .Cube(let a):
-                        if a != isAuto {
-                            pieces[i][1].isHidden = false
-                            pieces[i][1].alpha = 0.5
-                            if pieces[i].count > 1 {
-                                pieces[i][0].isHidden = true
-                                pieces[i][0].alpha = 1.0
-                            }
-                            break
-                        } else {
-                            pieces[i][1].isHidden = false
-                            pieces[i][1].alpha = 1.0
-                            break
-                        }
-                }
+                        break
+                    } else {
+                        pieces[i][1].isHidden = false
+                        pieces[i][1].alpha = 1.0
+                        break
+                    }
             }
         }
     }

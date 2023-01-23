@@ -355,8 +355,12 @@ class GameDataArchive {
         updateUserDefaults()
     }
     
-    //TODO: parse json back into data i dont feel like doing right now aaaaaa
     static func loadItem(index: Int) {
+        if index >= Self.gameList.count {
+            print(index)
+            return
+        }
+        
         do {
             let decoder = JSONDecoder()
             
@@ -378,7 +382,14 @@ class GameDataArchive {
         } catch {
             print(error)
         }
+        updateUserDefaults()
     }
+    
+    static func deleteAt(index: Int) {
+        Self.gameList.remove(at: index)
+        updateUserDefaults()
+    }
+    
     
     //TODO: upload code and i find http library aaaaaa
     static func uploadItems() {
