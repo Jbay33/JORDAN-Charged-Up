@@ -223,6 +223,83 @@ class Jank: Codable {
     public var fileVersion: Int
 }
 
+extension Jank {
+    func makeGamePeiceList() -> [GamePeice] {
+        var ls: [GamePeice] = [ ]
+        for i in self.gamePeices {
+            ls.append({
+                switch i {
+                case "Empty":
+                    return .Empty
+                    
+                case "CubeTeleop":
+                    return .Cube(auto: false)
+                    
+                case "CubeAuto":
+                    return .Cube(auto: true)
+                    
+                case "ConeTeleop":
+                    return .Cone(auto: false)
+                    
+                case "ConeAuto":
+                    return .Cone(auto: true)
+                    
+                default:
+                    print(i)
+                    return GamePeice.Empty
+                }
+            }())
+        }
+        return ls
+    }
+    func getFeedLocation() -> FeedLocation {
+        switch self.feedLocation {
+        case "Nowhere":
+            return .Nowhere
+        case "Floor":
+            return .Floor
+        case "Portal":
+            return .Portal
+        case "Both":
+            return .Both
+        default:
+            print(self.feedLocation)
+            return .Nowhere
+        }
+    }
+    func getFeederType() -> FeederType {
+        switch self.feederType {
+        case "None":
+            return .None
+        case "Cone":
+            return .Cone
+        case "Cube":
+            return .Cube
+        case "Both":
+            return .Both
+        default:
+            print(self.feederType)
+            return .None
+        }
+    }
+    func getChargeStationStatus(auto: Bool) -> ChargeStationStatus {
+        switch (auto) ? self.endAutoStatus : self.endgameStatus {
+        case "None":
+            return .None
+        case "InCommunity":
+            return .InCommunity
+        case "DockedUnengaged":
+            return .OnUnbalanced
+        case "DockedEngaged":
+            return .OnBalanced
+        default:
+            print((auto) ? self.endAutoStatus : self.endgameStatus)
+            return .None
+        }
+    }
+    
+}
+
 class GameDataArchive {
     public static var gameList: [String] = [ ]
     
@@ -280,7 +357,27 @@ class GameDataArchive {
     
     //TODO: parse json back into data i dont feel like doing right now aaaaaa
     static func loadItem(index: Int) {
-        //first cast: [String; Any], second cast: [String; [String]] (for game piece list)
+        do {
+            let decoder = JSONDecoder()
+            
+            let dat = try decoder.decode(Jank.self, from: Data(Self.gameList[index].utf8))
+            
+            GameData.clear()
+            
+            GameData.teamId = UInt(dat.teamId)
+            GameData.notes = dat.notes
+            GameData.playingDefense = dat.defensive
+            GameData.gamePeices = dat.makeGamePeiceList()
+            GameData.feedLocation = dat.getFeedLocation()
+            GameData.endgameStatus = dat.getChargeStationStatus(auto: false)
+            GameData.endAutoStatus = dat.getChargeStationStatus(auto: true)
+            GameData.feeder = dat.getFeederType()
+            
+            Self.gameList.remove(at: index)
+            
+        } catch {
+            print(error)
+        }
     }
     
     //TODO: upload code and i find http library aaaaaa

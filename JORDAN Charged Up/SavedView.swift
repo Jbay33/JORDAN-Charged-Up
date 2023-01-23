@@ -25,6 +25,13 @@ struct SavedView: View {
                         } else {
                             HStack {
                                 Text(verbatim: "(\(GameDataArchive.gameList.count - i.a)) Team: \(i.b)")
+                                Spacer()
+                                Button {
+                                    GameDataArchive.loadItem(index: i.a)
+                                    dismiss()
+                                } label: {
+                                    Text("Load")
+                                }
                             }
                         }
                     }

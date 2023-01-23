@@ -39,6 +39,8 @@ struct ContentView: View {
                                 .frame(width: 100)
                                 .onSubmit {
                                     handleNumber()
+                                }.onChange(of: teamName) { newValue in
+                                    handleNumber()
                                 }
                             
                             Spacer()
@@ -85,6 +87,9 @@ struct ContentView: View {
                 } else {
                     savedIcon = "tray.fill"
                 }
+                
+                teamName = GameData.teamId == 0 ? "" : String(GameData.teamId)
+                chargeStationAuto = GameData.endAutoStatus.rawValue
             }.toolbar {
                 NavigationLink(destination: SavedView()) {
                     HStack {
