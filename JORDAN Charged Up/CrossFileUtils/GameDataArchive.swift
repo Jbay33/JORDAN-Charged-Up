@@ -78,6 +78,8 @@ class GameDataArchive {
         
         var dat = try! decoder.decode(Jank.self, from: Data(Self.gameList[index].utf8))
         
+        print(dat.gamePieces)
+        
         //send request that sees if scouter exists
         //yes: continue
         //no:  send add request, get id
@@ -118,11 +120,13 @@ class GameDataArchive {
                             }, failure: handleErr)
 
                         }
+                        return
                     }
                 }
                 //make new
                 var temp = TempScouter()
                 temp.name = dat.scouter
+                
                 AF.request("\(dataZone)/scouters/add", method: .post, parameters: temp, encoder: JSONParameterEncoder.default).response { res in
                     handleResponse(res, success: scouterExists, failure: handleErr)
                 }
@@ -172,7 +176,7 @@ class GameDataArchive {
             GameData.scouter = dat.scouter
             GameData.notes = dat.notes
             GameData.playingDefense = dat.defensive
-            GameData.gamePeices = dat.makeGamePeiceList()
+            GameData.gamePieces = dat.makeGamePeiceList()
             GameData.feedLocation = dat.getFeedLocation()
             GameData.endGameStatus = dat.getChargeStationStatus(auto: false)
             GameData.endAutoStatus = dat.getChargeStationStatus(auto: true)

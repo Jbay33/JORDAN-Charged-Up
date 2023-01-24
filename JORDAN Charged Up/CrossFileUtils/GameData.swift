@@ -12,7 +12,7 @@ class GameData {
     
     public static var matchNumber: UInt = 0
     
-    public static var scouter: String = ""
+    public static var scouter: String = "YOUR NAME"
     
     public static var playingDefense: Bool = false
     
@@ -26,7 +26,7 @@ class GameData {
     
     public static var endAutoStatus: ChargeStationStatus = .None
     
-    public static var gamePeices: [GamePeice] = [
+    public static var gamePieces: [GamePeice] = [
         .Empty, .Empty, .Empty,
         .Empty, .Empty, .Empty,
         .Empty, .Empty, .Empty,
@@ -51,10 +51,10 @@ class GameData {
         Self.teamId = 0
         Self.playingDefense = false
         Self.notes = ""
-        Self.matchNumber = 0
+        Self.matchNumber += 1
         Self.endGameStatus = .None
         Self.endAutoStatus = .None
-        Self.gamePeices = [
+        Self.gamePieces = [
             .Empty, .Empty, .Empty,
             .Empty, .Empty, .Empty,
             .Empty, .Empty, .Empty,
@@ -78,15 +78,15 @@ class GameData {
             "notes": "\(GameData.notes)",
             "scouter": "\(Self.scouter)",
             "matchNumber": \(Self.matchNumber),
-            "gamePeices":
+            "gamePieces":
         [\({
             var finalString = ""
             
-            for i in 0..<GameData.gamePeices.count {
-                if i + 1 == GameData.gamePeices.count {
-                    finalString += "\"\(GameData.gamePeices[i].JSONValue())\" "
+            for i in 0..<GameData.gamePieces.count {
+                if i + 1 == GameData.gamePieces.count {
+                    finalString += "\"\(GameData.gamePieces[i].JSONValue())\" "
                 } else {
-                    finalString += "\"\(GameData.gamePeices[i].JSONValue())\", "
+                    finalString += "\"\(GameData.gamePieces[i].JSONValue())\", "
                 }
             }
         

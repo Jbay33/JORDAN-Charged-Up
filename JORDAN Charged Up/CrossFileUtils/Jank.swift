@@ -13,7 +13,7 @@ class Jank: Codable {
     public var scouterId: Int
     public var defensive: Bool
     public var notes: String
-    public var gamePeices: [String]
+    public var gamePieces: [String]
     public var endGameStatus: String
     public var matchNumber: Int
     public var endAutoStatus: String
@@ -34,7 +34,7 @@ extension Jank {
     
     func makeGamePeiceList() -> [GamePeice] {
         var ls: [GamePeice] = [ ]
-        for i in self.gamePeices {
+        for i in self.gamePieces {
             ls.append({
                 switch i {
                 case "Empty":
