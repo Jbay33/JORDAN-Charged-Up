@@ -19,7 +19,15 @@
 		CAC5D62929787731007EDE29 /* MidGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAC5D62829787731007EDE29 /* MidGame.swift */; };
 		CAC5D62C29787A6F007EDE29 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = CAC5D62B29787A6F007EDE29 /* Alamofire */; };
 		F8A8C380297B6D2200DC66BE /* SavedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8A8C37F297B6D2200DC66BE /* SavedView.swift */; };
-		F8DF2693297722EF00DEEE33 /* CrossFileUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8DF2692297722EF00DEEE33 /* CrossFileUtils.swift */; };
+		F8DF091D29805509000AC90C /* GamePiece.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8DF091C29805509000AC90C /* GamePiece.swift */; };
+		F8DF091F29805523000AC90C /* FeederType.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8DF091E29805523000AC90C /* FeederType.swift */; };
+		F8DF092129805569000AC90C /* ChargeStationStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8DF092029805569000AC90C /* ChargeStationStatus.swift */; };
+		F8DF0923298055B4000AC90C /* FeederLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8DF0922298055B4000AC90C /* FeederLocation.swift */; };
+		F8DF0925298055C8000AC90C /* Flow.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8DF0924298055C8000AC90C /* Flow.swift */; };
+		F8DF0927298055E1000AC90C /* GameData.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8DF0926298055E1000AC90C /* GameData.swift */; };
+		F8DF0929298055FE000AC90C /* MatchCompressed.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8DF0928298055FE000AC90C /* MatchCompressed.swift */; };
+		F8DF092B2980562F000AC90C /* Jank.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8DF092A2980562F000AC90C /* Jank.swift */; };
+		F8DF092D29805656000AC90C /* GameDataArchive.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8DF092C29805656000AC90C /* GameDataArchive.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,7 +43,15 @@
 		CAC5D6262978770A007EDE29 /* Mommylo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Mommylo.swift; sourceTree = "<group>"; };
 		CAC5D62829787731007EDE29 /* MidGame.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MidGame.swift; sourceTree = "<group>"; };
 		F8A8C37F297B6D2200DC66BE /* SavedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedView.swift; sourceTree = "<group>"; };
-		F8DF2692297722EF00DEEE33 /* CrossFileUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrossFileUtils.swift; sourceTree = "<group>"; };
+		F8DF091C29805509000AC90C /* GamePiece.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamePiece.swift; sourceTree = "<group>"; };
+		F8DF091E29805523000AC90C /* FeederType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeederType.swift; sourceTree = "<group>"; };
+		F8DF092029805569000AC90C /* ChargeStationStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChargeStationStatus.swift; sourceTree = "<group>"; };
+		F8DF0922298055B4000AC90C /* FeederLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeederLocation.swift; sourceTree = "<group>"; };
+		F8DF0924298055C8000AC90C /* Flow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Flow.swift; sourceTree = "<group>"; };
+		F8DF0926298055E1000AC90C /* GameData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameData.swift; sourceTree = "<group>"; };
+		F8DF0928298055FE000AC90C /* MatchCompressed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchCompressed.swift; sourceTree = "<group>"; };
+		F8DF092A2980562F000AC90C /* Jank.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Jank.swift; sourceTree = "<group>"; };
+		F8DF092C29805656000AC90C /* GameDataArchive.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameDataArchive.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,9 +92,9 @@
 				CAC5D609296CA04F007EDE29 /* FieldLayout.swift */,
 				CAC5D61A297876CF007EDE29 /* AutoView.swift */,
 				CAC5D62829787731007EDE29 /* MidGame.swift */,
+				F8DF091B298054C2000AC90C /* CrossFileUtils */,
 				CAC5D620297876F9007EDE29 /* TeleView.swift */,
 				CAC5D6262978770A007EDE29 /* Mommylo.swift */,
-				F8DF2692297722EF00DEEE33 /* CrossFileUtils.swift */,
 				CAC5D5FB296C989E007EDE29 /* Assets.xcassets */,
 				CAC5D5FD296C989E007EDE29 /* Preview Content */,
 			);
@@ -91,6 +107,22 @@
 				CAC5D5FE296C989E007EDE29 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		F8DF091B298054C2000AC90C /* CrossFileUtils */ = {
+			isa = PBXGroup;
+			children = (
+				F8DF091C29805509000AC90C /* GamePiece.swift */,
+				F8DF092A2980562F000AC90C /* Jank.swift */,
+				F8DF0924298055C8000AC90C /* Flow.swift */,
+				F8DF091E29805523000AC90C /* FeederType.swift */,
+				F8DF092029805569000AC90C /* ChargeStationStatus.swift */,
+				F8DF0922298055B4000AC90C /* FeederLocation.swift */,
+				F8DF0926298055E1000AC90C /* GameData.swift */,
+				F8DF0928298055FE000AC90C /* MatchCompressed.swift */,
+				F8DF092C29805656000AC90C /* GameDataArchive.swift */,
+			);
+			path = CrossFileUtils;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -170,13 +202,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F8DF2693297722EF00DEEE33 /* CrossFileUtils.swift in Sources */,
+				F8DF092129805569000AC90C /* ChargeStationStatus.swift in Sources */,
+				F8DF0927298055E1000AC90C /* GameData.swift in Sources */,
+				F8DF0929298055FE000AC90C /* MatchCompressed.swift in Sources */,
+				F8DF092D29805656000AC90C /* GameDataArchive.swift in Sources */,
 				CAC5D5FA296C989C007EDE29 /* ContentView.swift in Sources */,
+				F8DF0923298055B4000AC90C /* FeederLocation.swift in Sources */,
+				F8DF092B2980562F000AC90C /* Jank.swift in Sources */,
+				F8DF091D29805509000AC90C /* GamePiece.swift in Sources */,
 				CAC5D5F8296C989C007EDE29 /* JORDAN_Charged_UpApp.swift in Sources */,
 				CAC5D6272978770A007EDE29 /* Mommylo.swift in Sources */,
+				F8DF0925298055C8000AC90C /* Flow.swift in Sources */,
 				CAC5D61B297876CF007EDE29 /* AutoView.swift in Sources */,
 				F8A8C380297B6D2200DC66BE /* SavedView.swift in Sources */,
 				CAC5D60A296CA04F007EDE29 /* FieldLayout.swift in Sources */,
+				F8DF091F29805523000AC90C /* FeederType.swift in Sources */,
 				CAC5D62929787731007EDE29 /* MidGame.swift in Sources */,
 				CAC5D621297876F9007EDE29 /* TeleView.swift in Sources */,
 			);
