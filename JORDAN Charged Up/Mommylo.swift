@@ -15,64 +15,69 @@ struct Mommylo: View {
     @Environment(\.dismiss) var dismiss
     @State var notesForMatch = ""
     @State var disabled = false
+    let specBlue = Color("specBlue")
     var body: some View {
         NavigationStack {
-            VStack{
-                HStack {
-                    Spacer()
-                    Text("Notes").frame(width: 120)
-                    Spacer()
-                    Spacer()
-                    Text("End of match").frame(width: 120)
-                    Spacer()
-                }
-                
-                HStack {
-                    Spacer()
-                    VStack {
-                        
-                        TextEditor(text: $notes)
-                            .frame(width: 300, height: 100)
-                            .scrollContentBackground(.hidden)
-                            .background(Color(white: 0.93), in: RoundedRectangle(cornerRadius: 10))
-                            .scrollDismissesKeyboard(.interactively)
-                            .onChange(of: notes, perform: { newValue in
-                                GameData.notes = notes
-                            })
-                            .onSubmit {
-                                GameData.notes = notes
-                            }
-                            .padding()
-                    }.frame(height: 150)
-                    
-                    Spacer()
-                    
-                    VStack {
+            ZStack{
+                specBlue.ignoresSafeArea(.all)
+                VStack{
+                    HStack {
                         Spacer()
-                        
-                        HStack {
-                            Button("Submit Data") {
-                                showingAlert = true
-                            }.padding().buttonStyle(.bordered)
+                        Text("Notes").frame(width: 120)
+                        Spacer()
+                        Spacer()
+                        Text("End of match").frame(width: 120)
+                        Spacer()
+                    }
+                    
+                    HStack {
+                        Spacer()
+                        VStack {
                             
-                            Button("Save for Later") {
-                                //TODO: replace .finalize() & .toJSON()
-                                print(GameData.ToJSON())
-                                GameData.finalize()
-                                
-                                
-                                Flow.waterfall = true
-                                dismiss()
-                            }.padding().buttonStyle(.borderedProminent)
-                        }
+                            TextEditor(text: $notes)
+                                .frame(width: 300, height: 100)
+                                .scrollContentBackground(.hidden)
+                                .background(Color(white: 0.93), in: RoundedRectangle(cornerRadius: 10))
+                                .scrollDismissesKeyboard(.interactively)
+                                .onChange(of: notes, perform: { newValue in
+                                    GameData.notes = notes
+                                })
+                                .onSubmit {
+                                    GameData.notes = notes
+                                }
+                                .padding()
+                        }.frame(height: 150)
                         
                         Spacer()
-                    }.frame(height: 150)
+                        
+                        VStack {
+                            Spacer()
+                            
+                            HStack {
+                                Button("Submit Data") {
+                                    showingAlert = true
+                                }.padding().buttonStyle(.bordered)
+                                
+                                Button("Save for Later") {
+                                    //TODO: replace .finalize() & .toJSON()
+                                    print(GameData.ToJSON())
+                                    GameData.finalize()
+                                    
+                                    
+                                    Flow.waterfall = true
+                                    dismiss()
+                                }.padding().buttonStyle(.borderedProminent)
+                            }
+                            
+                            Spacer()
+                        }.frame(height: 150)
+                        
+                        Spacer()
+                    }
                     
-                    Spacer()
                 }
-                
-            }.onAppear{
+            }.foregroundColor(.white)
+            .onAppear{
                 notes = GameData.notes
             }.alert("Are you sure?", isPresented: $showingAlert) {
                 Button("Yes") {

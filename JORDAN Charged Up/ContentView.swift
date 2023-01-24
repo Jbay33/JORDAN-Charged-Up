@@ -15,13 +15,13 @@ struct ContentView: View {
     @State var chargeStationAuto = 0
     @State var scouterName = ""
     @State var savedIcon = "tray.fill"
-    let specBlue = CGColor.init(red: 18, green:19, blue:31, alpha:1)
+    let specBlue = Color("specBlue")
     var body: some View {
         
         NavigationStack {
             
             ZStack{
-                Color.init(specBlue).ignoresSafeArea(.all)
+                specBlue.ignoresSafeArea(.all)
                 VStack {
                     Text("Beginning of Match")
                     HStack{
@@ -127,7 +127,7 @@ struct ContentView: View {
                     }.buttonStyle(.borderedProminent)
                         .padding()
                 }
-            }
+            }.foregroundColor(.white)
             .onAppear {
                 if Flow.waterfall {
                     Flow.waterfall = false
