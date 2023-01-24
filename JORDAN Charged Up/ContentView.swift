@@ -15,11 +15,13 @@ struct ContentView: View {
     @State var chargeStationAuto = 0
     @State var scouterName = ""
     @State var savedIcon = "tray.fill"
-    let specBlue = Color(red: 18, green:19, blue:31)
-    
+    let specBlue = Color("specBlue")
     var body: some View {
+        
         NavigationStack {
+            
             ZStack{
+                specBlue.ignoresSafeArea(.all)
                 VStack {
                     Text("Beginning of Match")
                     HStack{
@@ -125,7 +127,8 @@ struct ContentView: View {
                     }.buttonStyle(.borderedProminent)
                         .padding()
                 }
-            }.onAppear {
+            }.foregroundColor(.white)
+            .onAppear {
                 if Flow.waterfall {
                     Flow.waterfall = false
                     teamName = ""
@@ -155,7 +158,8 @@ struct ContentView: View {
                     }
                 }
             }
-        }.onAppear {
+        }
+        .onAppear {
             GameDataArchive.loadUserDefaults()
         }
     }
