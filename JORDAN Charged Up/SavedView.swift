@@ -11,12 +11,13 @@ import SwiftUI
 struct SavedView: View {
     @Environment(\.dismiss) var dismiss
     @State var displayPopup = false
+    @State var list = GameDataArchive.getListOfMatches()
     
     var body: some View {
         NavigationStack {
             VStack {
                 List {
-                    ForEach(GameDataArchive.getListOfMatches(), id: \.self) {
+                    ForEach(list, id: \.self) {
                         i in
                         if i.a == -1 {
                             Text("Error")
@@ -24,36 +25,56 @@ struct SavedView: View {
                             Text("No data")
                         } else {
                             HStack {
-                                Text(verbatim: "(\(GameDataArchive.gameList.count - i.a)) Team: \(i.b)")
+                                Text(verbatim: "(\(GameDataArchive.gameList.count - i.a)) Team: \(i.b)").padding()
+                                
                                 Spacer()
+                                
+                                Button {
+                                    GameDataArchive.uploadItem(index: i.a)
+                                    print("Upload")
+                                    list = GameDataArchive.getListOfMatches()
+                                    dismiss()
+                                } label: {
+                                    Text("Upload")
+                                }.buttonStyle(.bordered).padding()
+                                
+                                Button {
+                                    GameDataArchive.deleteAt(index: i.a)
+                                    print("Delete")
+                                    list = GameDataArchive.getListOfMatches()
+                                    dismiss()
+                                } label: {
+                                    Text("Delete")
+                                }.buttonStyle(.bordered).padding()
+                                
+                                
                                 Button {
                                     GameDataArchive.loadItem(index: i.a)
+                                    print("Load")
+                                    list = GameDataArchive.getListOfMatches()
                                     dismiss()
                                 } label: {
                                     Text("Load")
-                                }
+                                }.buttonStyle(.bordered).padding()
+                                
                             }
                         }
                     }
                 }
             }.toolbar {
                 ToolbarItem(placement: .navigationBarTrailing) {
-                    Button {
-                        
-                    } label: {
-                        HStack {
-                            Button {
-                                displayPopup = true
-                            } label: {
-                                Text("Delete")
-                                
-                                if #available(iOS 16.0, *) {
-                                    Image(systemName: "trash.fill").fontWeight(.semibold)
-                                } else {
-                                    Image(systemName: "trash.fill")
-                                }
+                    HStack {
+                        Button {
+                            displayPopup = true
+                        } label: {
+                            Text("Clear All")
+                            
+                            if #available(iOS 16.0, *) {
+                                Image(systemName: "trash.fill").fontWeight(.semibold)
+                            } else {
+                                Image(systemName: "trash.fill")
                             }
-                        }
+                        }.disabled(!(GameDataArchive.gameList.count > 0))
                     }
 
                 }
@@ -70,6 +91,9 @@ struct SavedView: View {
                 } label: {
                     Text("Cancel")
                 }
+            }
+            .onAppear {
+                list = GameDataArchive.getListOfMatches()
             }
         }
     }

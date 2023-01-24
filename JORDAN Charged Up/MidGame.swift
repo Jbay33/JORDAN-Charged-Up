@@ -34,7 +34,7 @@ struct MidGame: View {
                             Text("On but not Balanced").tag(2)
                             Text("On and Balanced").tag(3)
                         }.padding(Edge.Set.bottom, 125.0).onChange(of: chargeStationTele) { num in
-                            GameData.endgameStatus = ChargeStationStatus(rawValue: chargeStationTele)!
+                            GameData.endGameStatus = ChargeStationStatus(rawValue: chargeStationTele)!
                         }
                     }.padding()
                     
@@ -92,12 +92,6 @@ struct MidGame: View {
                     
                     Spacer()
                 }
-                
-//                breaks everything for some silly reason:    
-//
-//                NavigationLink(destination: TeleView()) {
-//                    Text("Teleop")
-//                }.buttonStyle(.borderedProminent).padding()
             }.onAppear {
                 if Flow.waterfall {
                     chargeStationTele = 0
@@ -106,7 +100,7 @@ struct MidGame: View {
                     defense = false
                     dismiss()
                 } else {
-                    chargeStationTele = GameData.endgameStatus.rawValue
+                    chargeStationTele = GameData.endGameStatus.rawValue
                     groundPick = GameData.feedLocation.rawValue
                     gamePiece = GameData.feeder.rawValue
                     defense = GameData.playingDefense
