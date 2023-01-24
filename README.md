@@ -19,7 +19,9 @@ also milo, being the epicest gamer of them all, added functionality to all of th
 ##### THE PROJECT
 ###### THE PROJECT
 
-This is a scouting app for FRC events during the 2023 season in the Charged up game. Users are able to collect data about other teams, store it in a database and access it in a website. This app uses the HTTP protocol to comunicate with an API, which sends information to a database that can is consumed on the website [here.](https://robotics-scouting.vercel.app/)
+This is a scouting app for FRC events during the 2023 season in the Charged up game. Users are able to collect data about other teams, store it in a database and access it in a website. This app uses the HTTP protocol to comunicate with an API, which sends information to a database that can is consumed on the website [here.](https://robotics-scouting.vercel.app/) 
+
+We hope to use this for the 2023 season and possibly make it public facing. Many teams currently use google forms or even paper to keep track of data. This is designed to put data in the most consumable form possible. 
 
 ## HOW
 
