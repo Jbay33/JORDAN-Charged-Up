@@ -19,14 +19,15 @@ also milo, being the epicest gamer of them all, added functionality to all of th
 ##### THE PROJECT
 ###### THE PROJECT
 
-Ok so like when we are oging to go to robotics competition it is pain in bootyhole to get information on other teams so what we do is the thing where it like uhhhh uhm it is like uhhh hmmmm like you look at them and then when they do things you put it down. And instead of writing it down on paper like a CRINGe person we use the app!
+This is a scouting app for FRC events during the 2023 season in the Charged up game. Users are able to collect data about other teams, store it in a database and access it in a website. This app uses the HTTP protocol to comunicate with an API, which sends information to a database that can is consumed on the website [here.](https://robotics-scouting.vercel.app/)
 
 ## HOW
 
-- In autonomus and the teleropated you can click the places where they clicked respectively 
-- Upload to the interwebs and have no dublicate and **_cringe_** data
-- Also QR codes i think
-- Looks incredible
+- Users enter in team numbers and match numbers
+- Users enter in the exact locations on the field where they scored
+- Users are able to save data in a way that persists
+- Users are able to make requests to the API
+- Users can manage data that is saved and clear it if needed
 
 ## STARE IN AWE WITH YOUR NEWELY REBORN RETINAS
 
