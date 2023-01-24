@@ -11,7 +11,9 @@ import Alamofire
 
 struct ContentView: View {
     @State var teamName = ""
+    @State var matchNum = ""
     @State var chargeStationAuto = 0
+    @State var scouterName = ""
     @State var savedIcon = "tray.fill"
     let specBlue = Color(red: 18, green:19, blue:31)
     
@@ -19,15 +21,14 @@ struct ContentView: View {
         NavigationStack {
             ZStack{
                 VStack {
-                    
+                    Text("Beginning of Match")
                     HStack{
-                        
                         Spacer()
                         
                         VStack {
                             Spacer()
                             
-                            Text("Beginning of Match")
+                            Text("Team Number")
                                 .padding()
                             
                             Spacer()
@@ -41,6 +42,54 @@ struct ContentView: View {
                                     handleNumber()
                                 }.onChange(of: teamName) { newValue in
                                     handleNumber()
+                                }
+                            
+                            Spacer()
+                        }.frame(height: 100.0)
+                        
+                        Spacer()
+                        
+                        VStack {
+                            Spacer()
+                            
+                            Text("Match Number")
+                                .padding()
+                            
+                            Spacer()
+
+                            TextField("Match #", text: $matchNum)
+                                .keyboardType( .numbersAndPunctuation)
+                                .textFieldStyle(.roundedBorder)
+                                .scrollDismissesKeyboard(ScrollDismissesKeyboardMode.interactively)
+                                .frame(width: 100)
+                                .onSubmit {
+                                    handleMatch()
+                                }.onChange(of: matchNum) { newValue in
+                                    handleMatch()
+                                }
+                            
+                            Spacer()
+                        }.frame(height: 100.0)
+                        
+                        Spacer()
+                        
+                        VStack {
+                            Spacer()
+                            
+                            Text("Scouter Name")
+                                .padding()
+                            
+                            Spacer()
+                            
+                            TextField("Scouter", text: $scouterName)
+                                .keyboardType( .numbersAndPunctuation)
+                                .textFieldStyle(.roundedBorder)
+                                .scrollDismissesKeyboard(ScrollDismissesKeyboardMode.interactively)
+                                .frame(width: 100)
+                                .onSubmit {
+                                    handleScouter()
+                                }.onChange(of: scouterName) { newValue in
+                                    handleScouter()
                                 }
                             
                             Spacer()
@@ -67,6 +116,7 @@ struct ContentView: View {
                             }
                             Spacer()
                         }.frame(height: 100.0)
+                        
                         Spacer()
                     }.padding()
                     
@@ -90,6 +140,8 @@ struct ContentView: View {
                 
                 teamName = GameData.teamId == 0 ? "" : String(GameData.teamId)
                 chargeStationAuto = GameData.endAutoStatus.rawValue
+                matchNum = String(GameData.matchNumber)
+                scouterName = GameData.scouter
             }.toolbar {
                 NavigationLink(destination: SavedView()) {
                     HStack {
@@ -108,11 +160,23 @@ struct ContentView: View {
         }
     }
     
+    func handleScouter() {
+        GameData.scouter = scouterName
+    }
+    
     func handleNumber() {
         if let teamNum = UInt(teamName.trimmingCharacters(in: .whitespacesAndNewlines)) {
             GameData.teamId = teamNum
         } else {
             teamName = ""
+        }
+    }
+    
+    func handleMatch() {
+        if let match = UInt(matchNum.trimmingCharacters(in: .whitespacesAndNewlines)) {
+            GameData.matchNumber = match
+        } else {
+            matchNum = ""
         }
     }
     

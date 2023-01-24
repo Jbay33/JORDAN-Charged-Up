@@ -30,6 +30,15 @@ struct SavedView: View {
                                 Spacer()
                                 
                                 Button {
+                                    GameDataArchive.uploadItem(index: i.a)
+                                    print("Upload")
+                                    list = GameDataArchive.getListOfMatches()
+                                    dismiss()
+                                } label: {
+                                    Text("Upload")
+                                }.buttonStyle(.bordered).padding()
+                                
+                                Button {
                                     GameDataArchive.deleteAt(index: i.a)
                                     print("Delete")
                                     list = GameDataArchive.getListOfMatches()
