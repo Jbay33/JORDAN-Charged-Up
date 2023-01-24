@@ -125,7 +125,7 @@ struct ContentView: View {
                     NavigationLink(destination: AutoView()) {
                         Text("Start - Autonomous")
                     }.buttonStyle(.borderedProminent)
-                        .padding()
+                        .padding().tint(.white).foregroundColor(.black)
                 }
             }.foregroundColor(.white)
             .onAppear {
