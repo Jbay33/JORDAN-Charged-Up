@@ -47,7 +47,7 @@ struct TeleView: View {
                                 Image(systemName: "chevron.right")
                             }
                         }
-                    }
+                    }.foregroundColor(.white)
                 }
         }
     }

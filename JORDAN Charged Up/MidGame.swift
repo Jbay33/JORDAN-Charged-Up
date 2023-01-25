@@ -21,12 +21,20 @@ struct MidGame: View {
             ZStack{
                 specBlue.ignoresSafeArea(.all)
                 VStack {
+                    Text("Mid Game")
+                        .bold()
+                        .padding()
+                        .foregroundColor(Color("goofballPink"))
+                        .monospaced()
+                        .font(.title)
+                    
                     HStack {
                         Spacer()
                         
                         VStack {
                             Text("Charge Station")
-                                .padding(Edge.Set.top, 50.0)
+                                .foregroundColor(Color("gooberGray"))
+                                .padding(Edge.Set.top, 25.0)
                             
                             Spacer()
                             
@@ -35,7 +43,7 @@ struct MidGame: View {
                                 Text("In community").tag(1)
                                 Text("On but not Balanced").tag(2)
                                 Text("On and Balanced").tag(3)
-                            }.padding(Edge.Set.bottom, 125.0).onChange(of: chargeStationTele) { num in
+                            }.tint(Color.white).padding(Edge.Set.bottom, 25).onChange(of: chargeStationTele) { num in
                                 GameData.endGameStatus = ChargeStationStatus(rawValue: chargeStationTele)!
                             }
                         }.padding()
@@ -44,7 +52,8 @@ struct MidGame: View {
                         
                         VStack{
                             Text("Where can it feed from?")
-                                .padding(Edge.Set.top, 50.0)
+                                .foregroundColor(Color("gooberGray"))
+                                .padding(Edge.Set.top, 25.0)
                             
                             Spacer()
                             
@@ -53,7 +62,7 @@ struct MidGame: View {
                                 Text("Ground").tag(0)
                                 Text("Feeder").tag(1)
                                 Text("Both").tag(2)
-                            }.padding(Edge.Set.bottom, 125.0).onChange(of: groundPick) { num in
+                            }.tint(Color.white).padding(Edge.Set.bottom, 25.0).onChange(of: groundPick) { num in
                                 GameData.feedLocation = FeedLocation(rawValue: groundPick)!
                             }
                         }.padding()
@@ -62,7 +71,8 @@ struct MidGame: View {
                         
                         VStack{
                             Text("What can it pick up?")
-                                .padding(Edge.Set.top, 50.0)
+                                .foregroundColor(Color("gooberGray"))
+                                .padding(Edge.Set.top, 25.0)
                             
                             Spacer()
                             
@@ -71,7 +81,7 @@ struct MidGame: View {
                                 Text("Cone").tag(0)
                                 Text("Square").tag(1)
                                 Text("Both").tag(2)
-                            }.padding(Edge.Set.bottom, 125.0)
+                            }.tint(Color.white).padding(Edge.Set.bottom, 25.0)
                                 .onChange(of: gamePiece) { num in
                                     GameData.feeder = FeederType(rawValue: gamePiece)!
                                 }
@@ -81,19 +91,20 @@ struct MidGame: View {
                         
                         VStack {
                             Text("Playing Defense?")
-                                .padding(Edge.Set.top, 50.0)
+                                .foregroundColor(Color("gooberGray"))
+                                .padding(Edge.Set.top, 25.0)
                             
                             Spacer()
                             
                             Toggle("", isOn: $defense).frame(width: 50.0)
-                                .padding(Edge.Set.bottom, 125.0)
+                                .padding(Edge.Set.bottom, 25)
                                 .onChange(of: defense) { val in
                                     GameData.playingDefense = defense
                                 }
                         }.padding()
                         
                         Spacer()
-                    }
+                    }.frame(height: 175)
                 }.foregroundColor(.white)
                     .onAppear {
                         if Flow.waterfall {
@@ -120,7 +131,7 @@ struct MidGame: View {
                             Image(systemName: "chevron.right")
                         }
                     }
-                }
+                }.foregroundColor(Color.white)
             }
         }
     }

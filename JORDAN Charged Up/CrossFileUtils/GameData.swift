@@ -10,7 +10,7 @@ import Foundation
 class GameData {
     public static var teamId: UInt = 0
     
-    public static var matchNumber: UInt = 0
+    public static var matchNumber: UInt = 1
     
     public static var scouter: String = "YOUR NAME"
     

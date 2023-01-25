@@ -21,12 +21,23 @@ struct Mommylo: View {
             ZStack{
                 specBlue.ignoresSafeArea(.all)
                 VStack{
+                    Text("End of Match")
+                        .padding()
+                        .bold()
+                        .foregroundColor(Color("goofballPink"))
+                        .monospaced()
+                        .font(.title)
+                    
                     HStack {
                         Spacer()
-                        Text("Notes").frame(width: 120)
+                        Text("Notes")
+                            .foregroundColor(Color("gooberGray"))
+                            .frame(width: 120)
                         Spacer()
                         Spacer()
-                        Text("End of match").frame(width: 120)
+                        Text("End of match")
+                            .foregroundColor(Color("gooberGray"))
+                            .frame(width: 120)
                         Spacer()
                     }
                     
@@ -37,7 +48,8 @@ struct Mommylo: View {
                             TextEditor(text: $notes)
                                 .frame(width: 300, height: 100)
                                 .scrollContentBackground(.hidden)
-                                .background(Color(white: 0.93), in: RoundedRectangle(cornerRadius: 10))
+                                .background(Color("gooberGray"), in: RoundedRectangle(cornerRadius: 10))
+                                .foregroundColor(.black)
                                 .scrollDismissesKeyboard(.interactively)
                                 .onChange(of: notes, perform: { newValue in
                                     GameData.notes = notes
@@ -66,7 +78,7 @@ struct Mommylo: View {
                                     
                                     Flow.waterfall = true
                                     dismiss()
-                                }.padding().buttonStyle(.borderedProminent)
+                                }.foregroundColor(.black).tint(.white).padding().buttonStyle(.borderedProminent)
                             }
                             
                             Spacer()
@@ -83,9 +95,8 @@ struct Mommylo: View {
                 Button("Yes") {
                     //John  Submit
                     
-                    //TODO: replace .clear() & .toJSON()
-                    print(GameData.ToJSON())
-                    GameData.clear()
+                    GameData.finalize()
+                    GameDataArchive.uploadItem(index: GameDataArchive.gameList.count-1)
                     
                     
                     Flow.waterfall = true
@@ -99,7 +110,7 @@ struct Mommylo: View {
 }
 
 
-struct Mommylo_Previews: PreviewProvider {
+struct Momylo: PreviewProvider {
     static var previews: some View {
         Mommylo()
             .previewInterfaceOrientation(.landscapeLeft)

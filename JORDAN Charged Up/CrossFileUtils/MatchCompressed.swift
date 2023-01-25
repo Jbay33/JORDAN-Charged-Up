@@ -9,7 +9,7 @@ import Foundation
 
 class MatchCompressed: Hashable, Identifiable {
     static func == (lhs: MatchCompressed, rhs: MatchCompressed) -> Bool {
-        return lhs.a == rhs.a && lhs.b == rhs.b
+        return lhs.a == rhs.a && lhs.b == rhs.b && lhs.c == rhs.c
     }
     
     func hash(into hasher: inout Hasher) {
@@ -21,9 +21,11 @@ class MatchCompressed: Hashable, Identifiable {
     
     var a: Int
     var b: Int
+    var c: Int
     
-    init(val: (Int, Int) ) {
+    init(val: (Int, Int, Int) ) {
         a = val.0
         b = val.1
+        c = val.2
     }
 }

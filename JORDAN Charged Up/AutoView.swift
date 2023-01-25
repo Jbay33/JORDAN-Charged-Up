@@ -48,7 +48,7 @@ struct AutoView: View {
                     }
                 }
             }
-        }
+        }.tint(.white)
     }
 }
 

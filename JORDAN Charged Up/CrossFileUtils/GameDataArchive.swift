@@ -29,15 +29,15 @@ class GameDataArchive {
                 
                 let dat = try decoder.decode(Jank.self, from: Data(Self.gameList[i].utf8))
                 
-                list += [ MatchCompressed( val: ( i, dat.teamNumber ) ) ]
+                list += [ MatchCompressed( val: ( i, dat.teamNumber, dat.matchNumber ) ) ]
                 
             } catch {
                 print(error)
-                return [ MatchCompressed(val: (-1, -1) ) ]
+                return [ MatchCompressed(val: (-1, -1, -1) ) ]
             }
         }
         
-        return list.isEmpty ? [ MatchCompressed(val: (-2, -2) )] : list
+        return list.isEmpty ? [ MatchCompressed(val: (-2, -2, -2) )] : list
     }
     
     static func deleteUserDefaults() {

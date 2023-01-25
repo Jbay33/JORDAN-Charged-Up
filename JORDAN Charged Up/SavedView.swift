@@ -12,54 +12,63 @@ struct SavedView: View {
     @Environment(\.dismiss) var dismiss
     @State var displayPopup = false
     @State var list = GameDataArchive.getListOfMatches()
+    let specBlue = Color("specBlue")
     
     var body: some View {
         NavigationStack {
-            VStack {
-                List {
-                    ForEach(list, id: \.self) {
-                        i in
-                        if i.a == -1 {
-                            Text("Error")
-                        } else if i.a == -2 {
-                            Text("No data")
-                        } else {
-                            HStack {
-                                Text(verbatim: "(\(GameDataArchive.gameList.count - i.a)) Team: \(i.b)").padding()
-                                
-                                Spacer()
-                                
-                                Button {
-                                    GameDataArchive.uploadItem(index: i.a)
-                                    print("Upload")
-                                    list = GameDataArchive.getListOfMatches()
-                                    dismiss()
-                                } label: {
-                                    Text("Upload")
-                                }.buttonStyle(.bordered).padding()
-                                
-                                Button {
-                                    GameDataArchive.deleteAt(index: i.a)
-                                    print("Delete")
-                                    list = GameDataArchive.getListOfMatches()
-                                    dismiss()
-                                } label: {
-                                    Text("Delete")
-                                }.buttonStyle(.bordered).padding()
-                                
-                                
-                                Button {
-                                    GameDataArchive.loadItem(index: i.a)
-                                    print("Load")
-                                    list = GameDataArchive.getListOfMatches()
-                                    dismiss()
-                                } label: {
-                                    Text("Load")
-                                }.buttonStyle(.bordered).padding()
-                                
+            ZStack {
+                specBlue.ignoresSafeArea(.all).zIndex(-1)
+                VStack {
+                    List {
+                        ForEach(list, id: \.self) {
+                            i in
+                            if i.a == -1 {
+                                Text("Error")
+                                    .foregroundColor(Color("gooberGray"))
+                            } else if i.a == -2 {
+                                Text("No data")
+                                    .foregroundColor(Color("gooberGray"))
+                            } else {
+                                HStack {
+                                    Text(verbatim: "(\(i.c)) Team: \(i.b)")
+                                        .foregroundColor(Color("gooberGray"))
+                                        .padding()
+                                    
+                                    Spacer()
+                                    
+                                    Button {
+                                        GameDataArchive.uploadItem(index: i.a)
+                                        print("Upload")
+                                        list = GameDataArchive.getListOfMatches()
+                                        dismiss()
+                                    } label: {
+                                        Text("Upload")
+                                    }.buttonStyle(.bordered).padding()
+                                    
+                                    Button {
+                                        GameDataArchive.deleteAt(index: i.a)
+                                        print("Delete")
+                                        list = GameDataArchive.getListOfMatches()
+                                        dismiss()
+                                    } label: {
+                                        Text("Delete")
+                                    }.buttonStyle(.bordered).padding()
+                                    
+                                    
+                                    Button {
+                                        GameDataArchive.loadItem(index: i.a)
+                                        print("Load")
+                                        list = GameDataArchive.getListOfMatches()
+                                        dismiss()
+                                    } label: {
+                                        Text("Load")
+                                    }.buttonStyle(.bordered).padding()
+                                    
+                                }
                             }
                         }
-                    }
+                        .listRowBackground(Color.white.opacity(0.05))
+                    }.scrollContentBackground(Visibility.hidden)
                 }
             }.toolbar {
                 ToolbarItem(placement: .navigationBarTrailing) {
@@ -75,7 +84,8 @@ struct SavedView: View {
                                 Image(systemName: "trash.fill")
                             }
                         }.disabled(!(GameDataArchive.gameList.count > 0))
-                    }
+                            .opacity((GameDataArchive.gameList.count > 0) ? 1 : 0.5)
+                    }.foregroundColor(.white)
 
                 }
             }.alert("Are you sure?", isPresented: $displayPopup) {

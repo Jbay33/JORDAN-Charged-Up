@@ -19,11 +19,16 @@ struct ContentView: View {
     var body: some View {
         
         NavigationStack {
-            
             ZStack{
                 specBlue.ignoresSafeArea(.all)
                 VStack {
+                    Spacer()
                     Text("Beginning of Match")
+                        .padding()
+                        .bold()
+                        .foregroundColor(Color("goofballPink"))
+                        .monospaced()
+                        .font(.title)
                     HStack{
                         Spacer()
                         
@@ -31,11 +36,13 @@ struct ContentView: View {
                             Spacer()
                             
                             Text("Team Number")
+                                .foregroundColor(Color("gooberGray"))
                                 .padding()
                             
                             Spacer()
 
                             TextField("Team #", text: $teamName)
+                                .foregroundColor(.black)
                                 .keyboardType(.numbersAndPunctuation)
                                 .textFieldStyle(.roundedBorder)
                                 .scrollDismissesKeyboard(ScrollDismissesKeyboardMode.interactively)
@@ -55,11 +62,13 @@ struct ContentView: View {
                             Spacer()
                             
                             Text("Match Number")
+                                .foregroundColor(Color("gooberGray"))
                                 .padding()
                             
                             Spacer()
 
                             TextField("Match #", text: $matchNum)
+                                .foregroundColor(.black)
                                 .keyboardType( .numbersAndPunctuation)
                                 .textFieldStyle(.roundedBorder)
                                 .scrollDismissesKeyboard(ScrollDismissesKeyboardMode.interactively)
@@ -79,11 +88,13 @@ struct ContentView: View {
                             Spacer()
                             
                             Text("Scouter Name")
+                                .foregroundColor(Color("gooberGray"))
                                 .padding()
                             
                             Spacer()
                             
                             TextField("Scouter", text: $scouterName)
+                                .foregroundColor(.black)
                                 .keyboardType( .numbersAndPunctuation)
                                 .textFieldStyle(.roundedBorder)
                                 .scrollDismissesKeyboard(ScrollDismissesKeyboardMode.interactively)
@@ -103,6 +114,7 @@ struct ContentView: View {
                             Spacer()
                             
                             Text("Charge Station")
+                                .foregroundColor(Color("gooberGray"))
                                 .padding()
                             
                             Spacer()
@@ -122,10 +134,13 @@ struct ContentView: View {
                         Spacer()
                     }.padding()
                     
+                    Spacer()
+                    
                     NavigationLink(destination: AutoView()) {
                         Text("Start - Autonomous")
                     }.buttonStyle(.borderedProminent)
                         .padding().tint(.white).foregroundColor(.black)
+                    Spacer()
                 }
             }.foregroundColor(.white)
             .onAppear {
@@ -158,7 +173,7 @@ struct ContentView: View {
                     }
                 }
             }
-        }
+        }.tint(.white)
         .onAppear {
             GameDataArchive.loadUserDefaults()
         }
