@@ -33,4 +33,9 @@ We hope to use this for the 2023 season and possibly make it public facing. Many
 
 ## STARE IN AWE WITH YOUR NEWELY REBORN RETINAS
 
-![goobers](https://github.com/Jbay33/JORDAN-Charged-Up/blob/main/JORDAN%20Charged%20Up/Assets.xcassets/thingie.imageset/thingie.png "1")
+![beginning](https://github.com/Jbay33/JORDAN-Charged-Up/blob/main/JORDAN%20Charged%20Up/Assets.xcassets/Screenshots/1.imageset/Simulator%20Screen%20Shot%20-%20iPhone%2014%20-%202023-01-25%20at%2011.23.01.png?raw=true "1")
+![archive](https://github.com/Jbay33/JORDAN-Charged-Up/blob/main/JORDAN%20Charged%20Up/Assets.xcassets/Screenshots/2.imageset/Simulator%20Screen%20Shot%20-%20iPhone%2014%20-%202023-01-25%20at%2011.24.15.png?raw=true "2")
+![auto](https://github.com/Jbay33/JORDAN-Charged-Up/blob/main/JORDAN%20Charged%20Up/Assets.xcassets/Screenshots/3.imageset/Simulator%20Screen%20Shot%20-%20iPhone%2014%20-%202023-01-25%20at%2011.23.32.png?raw=true "3")
+![mid](https://github.com/Jbay33/JORDAN-Charged-Up/blob/main/JORDAN%20Charged%20Up/Assets.xcassets/Screenshots/4.imageset/Simulator%20Screen%20Shot%20-%20iPhone%2014%20-%202023-01-25%20at%2011.23.12.png?raw=true "4")
+![teleop](https://github.com/Jbay33/JORDAN-Charged-Up/blob/main/JORDAN%20Charged%20Up/Assets.xcassets/Screenshots/5.imageset/Simulator%20Screen%20Shot%20-%20iPhone%2014%20-%202023-01-25%20at%2011.23.55.png?raw=true "5")
+![finalize](https://github.com/Jbay33/JORDAN-Charged-Up/blob/main/JORDAN%20Charged%20Up/Assets.xcassets/Screenshots/6.imageset/Simulator%20Screen%20Shot%20-%20iPhone%2014%20-%202023-01-25%20at%2011.23.16.png?raw=true "6")
