@@ -13,13 +13,21 @@ also milo, being the epicest gamer of them all, added functionality to all of th
 
 1/19 - Milo did this. why did he do it? also, the entire project broke?
 
+1/20 - Milo and Justin updated their macs and the code to the newest version, while John finished the API.
+
+1/23 - Milo and John integrated the API into the app. Justin failed to make colors.
+
+1/24 - Milo and John got the API working, and Justin successfully made color!
+
+1/25 & 1/26 - Milo updated the README.md and took some screenshots.
+
 ## THE PROJECT 
 ### THE PROJECT
 #### THE PROJECT
 ##### THE PROJECT
 ###### THE PROJECT
 
-This is a scouting app for FRC events during the 2023 season in the Charged up game. Users are able to collect data about other teams, store it in a database and access it in a website. This app uses the HTTP protocol to comunicate with an API, which sends information to a database that can is consumed on the website [here.](https://robotics-scouting.vercel.app/) 
+This is a scouting app for FRC events during the 2023 season in the "Charged Up" game. Users are able to collect data about other teams, store it in a database and access it in a website. This app uses the HTTP protocol to comunicate with an API, which sends information to a database that can is consumed on the website [here.](https://robotics-scouting.vercel.app/) 
 
 We hope to use this for the 2023 season and possibly make it public facing. Many teams currently use google forms or even paper to keep track of data. This is designed to put data in the most consumable form possible. 
 
@@ -39,3 +47,7 @@ We hope to use this for the 2023 season and possibly make it public facing. Many
 ![mid](https://github.com/Jbay33/JORDAN-Charged-Up/blob/main/JORDAN%20Charged%20Up/Assets.xcassets/Screenshots/4.imageset/Simulator%20Screen%20Shot%20-%20iPhone%2014%20-%202023-01-25%20at%2011.23.12.png?raw=true "4")
 ![teleop](https://github.com/Jbay33/JORDAN-Charged-Up/blob/main/JORDAN%20Charged%20Up/Assets.xcassets/Screenshots/5.imageset/Simulator%20Screen%20Shot%20-%20iPhone%2014%20-%202023-01-25%20at%2011.23.55.png?raw=true "5")
 ![finalize](https://github.com/Jbay33/JORDAN-Charged-Up/blob/main/JORDAN%20Charged%20Up/Assets.xcassets/Screenshots/6.imageset/Simulator%20Screen%20Shot%20-%20iPhone%2014%20-%202023-01-25%20at%2011.23.16.png?raw=true "6")
+
+also, the app icon:
+
+![app icon lovely](https://github.com/Jbay33/JORDAN-Charged-Up/blob/main/JORDAN%20Charged%20Up/Assets.xcassets/AppIcon.appiconset/final.png?raw=true "App Icon")
