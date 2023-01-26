@@ -48,6 +48,6 @@ We hope to use this for the 2023 season and possibly make it public facing. Many
 ![teleop](https://github.com/Jbay33/JORDAN-Charged-Up/blob/main/JORDAN%20Charged%20Up/Assets.xcassets/Screenshots/5.imageset/Simulator%20Screen%20Shot%20-%20iPhone%2014%20-%202023-01-25%20at%2011.23.55.png?raw=true "5")
 ![finalize](https://github.com/Jbay33/JORDAN-Charged-Up/blob/main/JORDAN%20Charged%20Up/Assets.xcassets/Screenshots/6.imageset/Simulator%20Screen%20Shot%20-%20iPhone%2014%20-%202023-01-25%20at%2011.23.16.png?raw=true "6")
 
-also, the app icon:
+also, the app icon???
 
 ![app icon lovely](https://github.com/Jbay33/JORDAN-Charged-Up/blob/main/JORDAN%20Charged%20Up/Assets.xcassets/AppIcon.appiconset/final.png?raw=true "App Icon")
