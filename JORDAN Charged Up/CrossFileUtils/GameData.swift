@@ -12,7 +12,7 @@ class GameData {
     
     public static var matchNumber: UInt = 1
     
-    public static var scouter: String = "YOUR NAME"
+    public static var scouter: String = "NAME"
     
     public static var playingDefense: Bool = false
     
