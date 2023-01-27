@@ -124,19 +124,23 @@ class GameDataArchive {
                     }
                 }
                 //make new
-                var temp = TempScouter()
+                let temp = TempScouter()
                 temp.name = dat.scouter
                 
                 AF.request("\(dataZone)/scouters/add", method: .post, parameters: temp, encoder: JSONParameterEncoder.default).response { res in
-                    handleResponse(res, success: scouterExists, failure: handleErr)
+                    handleResponse(res, success: { _ in
+                        AF.request("\(dataZone)/scouters/get-all").response { res in
+                            handleResponse(res, success: scouterExists, failure: handleErr)
+                        }
+                    }, failure: handleErr)
                 }
+                
             } else {
                 if let parsed = try? decoder.decode(TempResult.self, from: data) {
                     print("Server returned error code: \(parsed.statusCode): \(parsed.error), \(parsed.message)")
                 } else {
                     print("Couldn't Decode JSON. Data: \(String(data: data, encoding: .utf8) ?? "failure")")
                 }
-                print("done secondary if/else")
             }
         }
         

@@ -15,6 +15,7 @@ class MatchCompressed: Hashable, Identifiable {
     func hash(into hasher: inout Hasher) {
         hasher.combine(a)
         hasher.combine(b)
+        hasher.combine(c)
     }
     
     let id = UUID()
