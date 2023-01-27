@@ -76,7 +76,7 @@ class GameDataArchive {
     static func uploadItem(index: Int) {
         let decoder = JSONDecoder()
         
-        var dat = try! decoder.decode(Jank.self, from: Data(Self.gameList[index].utf8))
+        let dat = try! decoder.decode(Jank.self, from: Data(Self.gameList[index].utf8))
         
         print(dat.gamePieces)
         
